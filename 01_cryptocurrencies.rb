@@ -7,6 +7,7 @@ devise_name = ["Bitcoin", "Ethereum", "XRP", "Bitcoin Cash", "EOS", "Litecoin", 
 
 # Associe chaque devise à son montant pour obtenir un hash du genre
 hash_value = Hash[*devise_name.zip(price).flatten]
+puts hash_value
 
 # La ou les crypto qui ont la plus grosse valeur.
 array_price = price.map!{ |element| element.gsub(/[$]/, '') }
