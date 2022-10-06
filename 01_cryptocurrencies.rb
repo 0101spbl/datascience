@@ -12,28 +12,22 @@ hash_value = Hash[*devise_name.zip(price).flatten]
 array_price = price.map!{ |element| element.gsub(/[$]/, '') }
 str_array = array_price.map(&:to_f)
 hash_value_2 = Hash[*devise_name.zip(str_array).flatten]
+
 max = hash_value_2.values.max
 puts Hash[hash_value_2.select { |k, v| v == max}]
 
 # La ou les crypto qui ont la plus petite valeur.
-array_price = price.map!{ |element| element.gsub(/[$]/, '') }
-str_array = array_price.map(&:to_f)
-hash_value_2 = Hash[*devise_name.zip(str_array).flatten]
+
 min = hash_value_2.values.min
 puts Hash[hash_value_2.select { |k, v| v == min}]
 
 
 # Les devises, dont le cours est inférieur à 6000 
-array_price = price.map!{ |element| element.gsub(/[$]/, '') }
-str_array = array_price.map(&:to_f)
-hash_value_2 = Hash[*devise_name.zip(str_array).flatten]
+
 inf_6000 = Hash[hash_value_2.select { |k, v| v <= 6000}]
 puts inf_6000.keys
 
 # La devise la plus chère parmi celles dont le cours est inférieur à 6000.
-array_price = price.map!{ |element| element.gsub(/[$]/, '') }
-str_array = array_price.map(&:to_f)
-hash_value_2 = Hash[*devise_name.zip(str_array).flatten]
+
 inf_6000 = Hash[hash_value_2.select { |k, v| v <= 6000}]
 puts Hash[inf_6000.select { |k, v| v == inf_6000.values.max}]
-Footer
